@@ -1,0 +1,185 @@
+.ocean{
+    max-width: 100%;
+    overflow: hidden;
+    background-color: var(--white-color);
+}
+
+:root{
+    --primary-color: rgb(63,208,212);
+    --black-color: black;
+    --white-color:#fff;
+}
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+html{
+    scroll-behavior: smooth;
+}
+body{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: var(--primary-color);
+    transition: 0.5s;
+}
+::-webkit-scrollbar{
+    width: 10px;
+}
+::-webkit-scrollbar-thumb{
+    border-radius: 6px;
+    background:linear-gradient(rgb(0, 238, 255), rgb(10, 199, 189));
+}
+body.active{
+    background-color: #f43648;
+}
+.title-note{
+    font-size: 1rem;
+    font-weight: 400;
+    color: rgb(7, 0, 0);
+    position: absolute;
+    width: 80%;
+    text-align: center;
+    top: -7%;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 9999;
+    display: none;
+}
+.container{
+    position: relative;
+    width: 800px;
+    height: 500px;
+    margin: 20px;
+}
+.primary-bg{
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 40px;
+    width: 100%;
+    height: 420px;
+    background-color: rgba(255,255,255,0.2);
+    box-shadow: 0 5px 45px rgba(0,0,0,0.15);
+}
+.primary-bg .box{
+    position: relative;
+    width: 50%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+.primary-bg .box h2{
+    color: #fff;
+    font-size: 1.2rem;
+    font-weight: 500;
+    margin-bottom: 10px;
+}
+.primary-bg .box button{
+    cursor: pointer;
+    padding: 10px 20px;
+    background-color: #fff;
+    color: #333;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+}
+.formBx{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 50%;
+    height: 100%;
+    background-color: #fff;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 5px 45px rgba(0,0,0,0.25);
+    transition: 0.5s ease-in-out;
+    overflow: hidden;
+}
+.formBx.active{
+    left:  50%;
+}
+.formBx .form{
+    position: absolute;
+    left: 0;
+    width: 100%;
+    padding: 50px;
+    transition: 0.5s;
+}
+.formBx .signinForm{
+    transition-delay: 0.25s;
+}
+.formBx.active .signinForm{
+    left: -100%;
+    transition-delay: 0s;
+}
+.formBx .signupForm{
+    transition-delay: 0s;
+    left: 100%;
+}
+.formBx.active .signupForm{
+    transition-delay: 0.25s;
+    left: 0;
+}
+.formBx .form form{
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.formBx .form form h3{
+    font-size: 1.2rem;
+    color: #333;
+    margin-bottom: 20px;
+    font-weight: 500;
+}
+.formBx .form form .form-group input{
+    width: 100%;
+    margin-bottom: 16px;
+    padding: 10px;
+    outline: none;
+    font-size: 1.2rem;
+    border: 1px solid rgb(22, 110, 10);
+}
+.formBx .form form .form-group .form-message{
+    margin-top: -16px;
+    margin-bottom: 16px;
+    display: block;
+}
+.formBx .form form .form-group .form-submit{
+    display: block;
+    background-color: var(--primary-color);
+    border: none;
+    min-width: 100px;
+    padding: 12px 10px;
+    font-size: 1.2rem;
+    cursor: pointer;
+    color: white;
+    text-transform: capitalize;
+}
+.formBx.active .signupForm .form-group .form-submit{
+    display: block;
+    background-color: #f43648;
+}
+.formBx .form form .forgot{
+    color: #333;
+}
+
+/* invalid */
+.form-group.invalid .form-message{
+    color: #f43648;
+    font-size: 0.8rem;
+}
+.form-group.invalid input{
+    border: 1px solid #f43648 !important;
+}
